@@ -1,0 +1,9 @@
+<h1>Registration#verify</h1>
+<p>Find me in app/views/registration/destroy_form.html.erb</p>
+<%= @status %>
+<%= form_tag("/registrations/destroy", method: "delete") do %>
+  <%= hidden_field_tag(:nonce, @registration.nonce) =%>
+  <%= hidden_field_tag(:id, @registration.id) =%>
+  <%= submit_tag("Destroy") %>
+<% end %>
+
