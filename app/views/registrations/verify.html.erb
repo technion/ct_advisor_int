@@ -1,5 +1,6 @@
 <h1>Registration#verify</h1>
 <p>Find me in app/views/registration/verify.html.erb</p>
+<div>Click to verify your registration</div>
 <%= @pass %>
   <%= form_tag("/registrations/verify", method: "post") do %>
   <%= hidden_field_tag(:id, @registration.id) =%>

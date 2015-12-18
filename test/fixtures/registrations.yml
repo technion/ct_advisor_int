@@ -1,13 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  email: MyString
-  domain: MyString
-  nonce: MyString
-  active: 1
+  id: 1
+  email: testuser@testdomain.com
+  domain: domain.com
+  nonce: nonce1
+  active: 0
 
 two:
-  email: MyString
-  domain: MyString
-  nonce: MyString
+  id: 2
+  email: testuser2@testdomain2.com
+  domain: testdomain2.com
+  nonce: nonce2
   active: 1
