@@ -9,7 +9,8 @@ class RegistrationsController < ApplicationController
   end
 
   def unsub_send
-    @registration = Registration.find_by(:domain => params[:registration][:domain])
+    @registration = Registration.find_by(:domain =>
+      params[:registration][:domain].downcase)
     @status = "Unsubscribe email sent."
     render "status"
       
@@ -17,7 +18,7 @@ class RegistrationsController < ApplicationController
 
   def create
     @registration = Registration.new(registration_params)
-    @registration.nonce = SecureRandom.urlsafe_base64
+    @registraiton.set_nonce
     @registration.active = 0
     @registration.save
   end
