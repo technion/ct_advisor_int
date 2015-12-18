@@ -11,9 +11,17 @@ class RegistrationsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should get verify" do
-    get :verify, {'id' => 3, 'nonce' => 'erwgrwegwerg'}
+  test "should get verify invalid id" do
+    get :verify, {'id' => 10, 'nonce' => 'erwgrwegwerg'}
     assert_response :success
+    assert_select "body div", {text: "ID not found"}
   end
+
+  test "should get destroy invalid id" do
+    get :verify, {'id' => 10, 'nonce' => 'erwgrwegwerg'}
+    assert_response :success
+    assert_select "body div", {text: "ID not found"}
+  end
+
 
 end

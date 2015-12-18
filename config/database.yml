@@ -57,8 +57,8 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: ct_advisor_int_development
-  username: ct_advisor_int_development
+  database: ct_advisor_int_test
+  username: ct_advisor_int_test
 
   # The password associated with the postgres role (username).
   password: <%= ENV['TEST_DB_PASS'] %>

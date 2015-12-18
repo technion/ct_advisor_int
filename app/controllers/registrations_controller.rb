@@ -1,4 +1,5 @@
 class RegistrationsController < ApplicationController
+  rescue_from ActiveRecord::RecordNotFound, :with => :id_not_found
   def new
     @registration = Registration.new
   end
@@ -66,5 +67,10 @@ class RegistrationsController < ApplicationController
   private
   def registration_params
     params.require(:registration).permit(:email, :domain)
+  end
+
+  def id_not_found
+    @status = "ID not found"
+    render "status"
   end
 end
