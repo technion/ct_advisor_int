@@ -11,16 +11,28 @@ class RegistrationsController < ApplicationController
   def unsub_send
     @registration = Registration.find_by(:domain =>
       params[:registration][:domain].downcase)
-    @status = "Unsubscribe email sent."
+    if @registration && (@registration.email == 
+        params[:registration][:email].downcase)
+      @status = "Unsubscribe email sent."
+      EmailAlert.unsubscribe(@registration).deliver_later
+    else
+      @status = "Account not found"
+    end
     render "status"
       
   end
 
   def create
     @registration = Registration.new(registration_params)
-    @registraiton.set_nonce
+    @registration.set_nonce
     @registration.active = 0
-    @registration.save
+    if @registration.save
+      EmailAlert.activate(@registration).deliver_later
+      @status = "Please check your email"
+    else
+      @status = "Domain is already registered"
+    end
+    render "status"
   end
 
   def destroy_form
@@ -56,7 +68,7 @@ class RegistrationsController < ApplicationController
     if @registration.nonce == params[:nonce]
       @status = "User has been verified."
       @registration.active = 1
-      @registration.nonce = SecureRandom.urlsafe_base64
+      @registration.set_nonce
       @registration.save
     else
       @status = "Nonce not valid"

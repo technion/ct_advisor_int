@@ -19,7 +19,7 @@ class UnsubscribeTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_select "body div", {text: "Click to confirm unsubscribe"}
 
-    delete "/registrations/destroy", 
+    delete "/registrations", 
       id: @registration.id, nonce: @registration.nonce
     assert_response :success
     assert_select "body div", {text: "Registration removal confirmed"}

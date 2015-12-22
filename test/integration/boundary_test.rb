@@ -10,7 +10,7 @@ class BoundaryTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_select "body div", {text: "Nonce is invalid"}
 
-    delete "/registrations/destroy", 
+    delete "/registrations", 
       id: @registration.id, nonce: "thisisnothenonce"
     assert_response :success
     assert_select "body div", {text: "Nonce is invalid"}

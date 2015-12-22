@@ -1,8 +1,8 @@
-<h1>Registration#verify</h1>
-<p>Find me in app/views/registration/verify.html.erb</p>
+<h1>Registration</h1>
+<p>Please click below to confirm your registration</p>
+<% provide(:title, 'Verify Registration') %>
 <div>Click to verify your registration</div>
-<%= @pass %>
-  <%= form_tag("/registrations/verify", method: "post") do %>
+<%= form_tag("/registrations/verify", method: "post") do %>
   <%= hidden_field_tag(:id, @registration.id) =%>
   <%= hidden_field_tag(:nonce, @registration.nonce) =%>
   <%= submit_tag("Verify") %>
