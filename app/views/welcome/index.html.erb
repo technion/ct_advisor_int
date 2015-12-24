@@ -1,2 +1,29 @@
 <h1>CT Advisor - Certificate Transparency Monitoring</h1>
-<p>Proactive alerts.</p>
+
+ct_advisor is a proactive alerting tool for <a class="btn btn-default" href="https://www.certificate-transparency.org/">Google's Certificate Transparency</a><br>
+
+Google offers a number of great options for an administrator to utilise this feature. Unfortunately being an early adopter, particularly if you run Windows servers or run SSL on appliances, makes it difficult to take advantage of this service.<br>
+
+As an alternative option, this service continually polls the CT log, and will  proactively trigger alerts and send you an email if a certificate is ever registered for your domain, by any CA in the CT program. This can be used to identify fraudulent certificates.
+
+<h2>Using CT Advisor</h2>
+Once you've registered a domain, there's nothing more to do. You will receive an email any time an SSL certificate for your domain, or any subdomains, are submitted to the CT log.<br>
+
+This image this ct_advisor in action:
+
+<img src="https://lolware.net/ct_advisor_email.jpg"><p>
+
+To register a domain for monitoring on this service, <%= link_to "click here to register your domain", new_registration_path, class:  "btn btn-primary" %>
+</p>
+<h2>Source code</h2>
+Users are encouraged to review source code.<br>
+<a class="btn btn-primary" href="https://github.com/technion/ct_advisor_int">Front end code - Rails</a><br>
+<a class="btn btn-primary" href="https://github.com/technion/ct_advisor">Where all the action happens - Erlang</a><br>
+<h2>Security</h2>
+Every useless organisation and its dog currently claims to "take security very seriously". The only serious statements a person can make are:
+<ul>
+<li>The only information gathered is what you provide when signing up - email address and associated domain.</li>
+<li>All source code is available for review</li> 
+<li>Frontend code is analysed with brakeman and bundler-audit regularly</li>
+</ul>
+If you believe you have identified security concern, please report privately by deirect email.

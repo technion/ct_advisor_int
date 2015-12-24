@@ -26,6 +26,12 @@ class RegistrationsController < ApplicationController
     @registration = Registration.new(registration_params)
     @registration.set_nonce
     @registration.active = 0
+    unless verify_recaptcha(model: @registration)
+      @status = "Captcha incorrectly entered"
+      render "status"
+      return
+    end
+
     if @registration.save
       EmailAlert.activate(@registration).deliver_later
       @status = "Please check your email"
