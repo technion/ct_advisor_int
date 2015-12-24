@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  #get 'welcome/index'
+  root 'welcome#index'
+
   get 'registrations/verify/:id/:nonce', to: 'registrations#verify'
   post 'registrations/verify', to: 'registrations#verify_activate'
   get 'registrations/unsubscribe', to: 'registrations#unsub'

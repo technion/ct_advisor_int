@@ -1,14 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>CtAdvisorInt</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+  <title><%= yield(:title) %> </title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
+<!-- Full Width Image Header with Logo -->
+<!-- Image backgrounds are set within the full-width-pics.css file. -->
+<header class="image-bg-fluid-height">
+	<img class="img-responsive img-center" src="http://i0.kym-cdn.com/photos/images/masonry/000/839/199/8a9.jpg" alt="Certificate Transparency">
+</header>
+<section>
+<div class="container">
+
 <%= yield %>
+</div>
+</section>
+<!-- Footer -->
+<footer>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<p>lolware.net</p>
+			</div>
+		</div>
+		<!-- /.row -->
+	</div>
+	<!-- /.container -->
+</footer>
 
 </body>
 </html>
