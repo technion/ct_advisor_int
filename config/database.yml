@@ -84,6 +84,6 @@ test:
 #
 production:
   <<: *default
-  database: ct_advisor_int_production
-  username: ct_advisor_int
-  password: <%= ENV['CT_ADVISOR_INT_DATABASE_PASSWORD'] %>
+  database: ct_advisor_int_live
+  username: ct_advisor_int_live
+  password: <%= ENV['LIVE_DB_PASS'] %>
