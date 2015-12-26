@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'dotenv-rails', '2.0.2'
 gem "recaptcha", require: "recaptcha/rails"
+gem 'public_suffix', '~> 1.5'
 gem 'puma'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'

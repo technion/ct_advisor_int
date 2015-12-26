@@ -1,5 +1,7 @@
 class RegistrationsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, :with => :id_not_found
+  BLACKLIST = ["cloudflaressl.com", "facebook.com"]
+
   def new
     @registration = Registration.new
   end
@@ -28,6 +30,12 @@ class RegistrationsController < ApplicationController
     @registration.active = 0
     unless verify_recaptcha(model: @registration)
       @status = "Captcha incorrectly entered"
+      render "status"
+      return
+    end
+
+    unless verify_domain(@registration.domain)
+      @status = "Entered domain is not valid"
       render "status"
       return
     end
@@ -90,5 +98,14 @@ class RegistrationsController < ApplicationController
   def id_not_found
     @status = "ID not found"
     render "status"
+  end
+
+  def verify_domain(domain)
+    return false unless PublicSuffix.valid?(domain)
+    domain = PublicSuffix.parse(domain)
+    return false unless domain.domain
+    return false if BLACKLIST.include?(domain.domain)
+
+    true
   end
 end

@@ -13,8 +13,18 @@ class RegistrationsControllerTest < ActionController::TestCase
     post :create, registration: {email: "anew@creationdomain.com",
             domain: "creationdomain.com"}
     Recaptcha.configuration.skip_verify_env.push("test")
-    assert_select "body div", {text: "Captcha incorrectly entered"}
     assert_response :success
+    assert_select "body div", {text: "Captcha incorrectly entered"}
+  end
+
+  test "should reject invalid domain" do
+    ["com", ".com", "google", "cloudflaressl.com"].each do |domain|
+      # Recaptcha disables by default in test - enable for this test.
+      post :create, registration: {email: "anew@creationdomain.com",
+              domain: domain}
+      assert_response :success
+      assert_select "body div", {text: "Entered domain is not valid"}
+    end
   end
 
 
