@@ -21,6 +21,7 @@ Setup
 -----
 The following items must configured in .env:
 
+```
 DEV_DB_PASS=xx
 TEST_DB_PASS=xx
 SMTP_HOST=xx
@@ -28,6 +29,7 @@ SMTP_USER=xx
 SMTP_PASS=xx
 RECAPTCHA_PUBLIC_KEY=xx
 RECAPTCHA_PRIVATE_KEY=xx
+```
 
 Management
 ----------
