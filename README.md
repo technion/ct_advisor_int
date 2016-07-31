@@ -38,7 +38,8 @@ Start:
 RAILS_ENV=production puma -C config/puma/production.rb
 ```
 Uninterupted restart:
-```kill -s SIGUSR2 `cat tmp/pids/puma.pid`
+```
+kill -s SIGUSR2 `cat tmp/pids/puma.pid`
 ```
 
 Contributing
