@@ -33,8 +33,13 @@ RECAPTCHA_PRIVATE_KEY=xx
 
 Management
 ----------
-Start: RAILS_ENV=production puma -C config/puma/production.rb
-Uninterupted restart: kill -s SIGUSR2 `cat tmp/pids/puma.pid`
+Start: 
+```
+RAILS_ENV=production puma -C config/puma/production.rb
+```
+Uninterupted restart:
+```kill -s SIGUSR2 `cat tmp/pids/puma.pid`
+```
 
 Contributing
 ------------
