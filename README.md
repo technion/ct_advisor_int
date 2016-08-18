@@ -1,5 +1,6 @@
 ct_advisor_int
 ==========
+[![Build Status](https://travis-ci.org/technion/ct_advisor_int.svg?branch=master)](https://travis-ci.org/technion/ct_advisor_int)
 
 ct_advisor is a proactive alerting tool for [Google's Certificate Transparency](https://www.certificate-transparency.org/).
 
