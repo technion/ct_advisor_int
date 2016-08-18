@@ -10,7 +10,7 @@ class UnsubscribeTest < ActionDispatch::IntegrationTest
     assert_response :success
 
     post "/registrations/unsubscribe",
-      registration: {email: @registration.email, domain: @registration.domain}
+      params: {registration: {email: @registration.email, domain: @registration.domain} }
     assert_response :success
     assert_select "body div", {text: "Unsubscribe email sent."}
 
@@ -20,7 +20,7 @@ class UnsubscribeTest < ActionDispatch::IntegrationTest
     assert_select "body div", {text: "Click to confirm unsubscribe"}
 
     delete "/registrations", 
-      id: @registration.id, nonce: @registration.nonce
+      params: { id: @registration.id, nonce: @registration.nonce }
     assert_response :success
     assert_select "body div", {text: "Registration removal confirmed"}
 

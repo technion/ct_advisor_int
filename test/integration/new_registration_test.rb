@@ -9,8 +9,9 @@ class NewRegistrationTest < ActionDispatch::IntegrationTest
      #Create the registration
      get "/registrations/new"
      assert_response :success
-     post "/registrations", registration: {email: "anew@creationdomain.com",
-       domain: "creationdomain.com"}
+     post "/registrations", params: {
+       registration: {email: "anew@creationdomain.com",
+       domain: "creationdomain.com"} }
      assert_response :success
 
      # Test the registration now exists
@@ -25,7 +26,8 @@ class NewRegistrationTest < ActionDispatch::IntegrationTest
      assert_response :success
      assert_select "body div", {text: "Click to verify your registration"}
 
-     post "/registrations/verify", {id: @newreg.id, nonce: @newreg.nonce}
+     post "/registrations/verify",
+       params: {id: @newreg.id, nonce: @newreg.nonce}
      assert_response :success
      assert_select "body div", {text: "User has been verified."}
 
