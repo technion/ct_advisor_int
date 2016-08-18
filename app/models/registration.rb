@@ -1,4 +1,4 @@
-class Registration < ActiveRecord::Base
+class Registration < ApplicationRecord
   before_save { self.email = email.downcase }
   before_save { self.domain = domain.downcase }
   validates :domain, presence: true, uniqueness: { case_sensitive: false }

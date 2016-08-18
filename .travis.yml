@@ -1,0 +1,14 @@
+language: ruby
+rvm:
+  - 2.3.1
+env:
+  - RECAPTCHA_PUBLIC_KEY='6LeIyhMTAAAAAMsqDqlhkQf3AXemBxjsyuSf8gzq'
+services:
+  - postgresql
+script:
+  - bundle exec rails db:migrate
+  - bundle exec rake test
+before_script:
+  - psql -c 'create database ct_advisor_int_test;' -U postgres
+  - psql -c 'create user ct_advisor_int_test;' -U postgres
+  - psql -c 'grant all privileges on database ct_advisor_int_test to ct_advisor_int_test;' -U postgres
