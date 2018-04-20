@@ -36,6 +36,7 @@ group :development, :test do
   gem 'byebug'
   gem 'brakeman'
   gem 'bundler-audit'
+  gem 'listen'
 end
 
 group :development do
