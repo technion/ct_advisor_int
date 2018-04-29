@@ -6,31 +6,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
   <title><%= yield(:title) %> </title>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<!-- Full Width Image Header with Logo -->
-<!-- Image backgrounds are set within the full-width-pics.css file.
-<header class="image-bg-fluid-height">
-	<%= image_tag 'haroldcoffee.jpg', alt: "Certificatee Transparency", class: "img-responsive img-center" %>
-</header>-->
+   <!-- Masthead -->
+    <header class="masthead text-white text-center">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-9 mx-auto">
+            <h1 class="mb-5">Monitor for SSL issuance for your domains with Certificate Transparency</h1>
+          </div>
+        </div>
+      </div>
+    </header>
+
 <%= yield %>
 <!-- Footer -->
-<footer>
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12">
-				<p>lolware.net</p>
-			</div>
-		</div>
-		<!-- /.row -->
-	</div>
-	<!-- /.container -->
-</footer>
+    <footer class="footer bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+            <ul class="list-inline mb-2">
+              <li class="list-inline-item">
+                <a href="/">About</a>
+              </li>
+              <li class="list-inline-item">&sdot;</li>
+              <li class="list-inline-item">
+                <a href="mailto:technion@lolware.net">Contact: technion@lolware.net</a>
+              </li>
+            </ul>
+            <p class="text-muted small mb-4 mb-lg-0">&copy; Lolware. All Rights Reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
 
 </body>
 </html>
