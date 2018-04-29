@@ -1,13 +1,6 @@
 <h1>CT Advisor - Certificate Transparency Monitoring</h1>
 <% provide(:title, 'SSL Certificate Issuance Monitoring') %>
 
-
-ct_advisor is a proactive alerting tool for <a class="btn btn-default" href="https://www.certificate-transparency.org/">Google's Certificate Transparency</a><br>
-
-Google offers a number of great options for an administrator to utilise this feature. Unfortunately being an early adopter, particularly if you run Windows servers or run SSL on appliances, makes it difficult to take advantage of this service.<br>
-
-As an alternative option, this service continually polls the CT log, and will  proactively trigger alerts and send you an email if a certificate is ever registered for your domain, by any CA in the CT program. This can be used to identify fraudulent certificates.
-
 <h2>Using CT Advisor</h2>
 Once you've registered a domain, there's nothing more to do. You will receive an email any time an SSL certificate for your domain, or any subdomains, are submitted to the CT log.<br>
 
@@ -15,17 +8,147 @@ This image shows ct_advisor in action:
 
 <img src="https://lolware.net/assets/images/ct_advisor_email.jpg"><p>
 
-To register a domain for monitoring on this service, <%= link_to "click here to register your domain", new_registration_path, class:  "btn btn-primary" %>
 </p>
-<h2>Source code</h2>
-Users are encouraged to review source code.<br>
-<a class="btn btn-primary" href="https://github.com/technion/ct_advisor_int">Front end code - Rails</a><br>
-<a class="btn btn-primary" href="https://github.com/technion/ct_advisor">Where all the action happens - Erlang</a><br>
-<h2>Security</h2>
+    <!-- Masthead -->
+    <header class="masthead text-white text-center">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-9 mx-auto">
+            <h1 class="mb-5">Monitor for SSL issuance for your domains with Certificate Transparency</h1>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Image Showcases -->
+    <section class="showcase">
+      <div class="container-fluid p-0">
+        <div class="row no-gutters">
+
+          <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url(<%= asset_path 'haroldcoffee.jpg' %>;"></div>
+          <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+            <h2>Fully Responsive Design</h2>
+<p class="lead mb-0">ct_advisor is a proactive alerting tool for <a class="btn btn-default" href="https://www.certificate-transparency.org/">Google's Certificate Transparency</a></p>
+Google offers a number of great options for an administrator to utilise this feature. Unfortunately being an early adopter, particularly if you run Windows servers or run SSL on appliances, makes it difficult to take advantage of this service.<br>
+
+As an alternative option, this service continually polls the CT log, and will  proactively trigger alerts and send you an email if a certificate is ever registered for your domain, by any CA in the CT program. This can be used to identify fraudulent certificates.
+          </div>
+        </div>
+        <div class="row no-gutters">
+          <div class="col-lg-6 text-white showcase-img" style="background-image: url(<%= asset_path 'haroldcoffee.jpg' %>;"></div>
+          <div class="col-lg-6 my-auto showcase-text">
+<p class="lead mb-0"><h2>Security</h2>
 Every useless organisation and its dog currently claims to "take security very seriously". The only serious statements a person can make are:
 <ul>
 <li>The only information gathered is what you provide when signing up - email address and associated domain.</li>
 <li>All source code is available for review</li> 
 <li>Frontend code is analysed with brakeman and bundler-audit regularly</li>
 </ul>
-If you believe you have identified a security concern, please report privately by direct email: technion at lolware.net.
+If you believe you have identified a security concern, please report privately by direct email: technion at lolware.net.</p>
+
+          </div>
+        </div>
+        <div class="row no-gutters">
+          <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url(<%= asset_path 'haroldcoffee.jpg' %>;"></div>
+          <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+<h2>Source code</h2>
+<p class="lead mb-0">Users are encouraged to review source code.<br>
+<a class="btn btn-primary" href="https://github.com/technion/ct_advisor_int">Front end code - Rails</a><br>
+<a class="btn btn-primary" href="https://github.com/technion/ct_advisor">Where all the action happens - Erlang</a><br></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials text-center bg-light">
+      <div class="container">
+        <h2 class="mb-5">What people are saying...</h2>
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+              <img class="img-fluid rounded-circle mb-3" src=<%= asset_path 'haroldcoffee.jpg' %> alt="">
+              <h5>Margaret E.</h5>
+              <p class="font-weight-light mb-0">"This is fantastic! Thanks so much guys!"</p>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+              <img class="img-fluid rounded-circle mb-3" src=<%= asset_path 'haroldcoffee.jpg' %> alt="">
+              <h5>Fred S.</h5>
+              <p class="font-weight-light mb-0">"Bootstrap is amazing. I've been using it to create lots of super nice landing pages."</p>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+              <img class="img-fluid rounded-circle mb-3" src=<%= asset_path 'haroldcoffee.jpg' %> alt="">
+              <h5>Sarah	W.</h5>
+              <p class="font-weight-light mb-0">"Thanks so much for making these free resources available to us!"</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="call-to-action text-white text-center">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-9 mx-auto">
+            <h2 class="mb-4">Ready to get started? Sign up now!</h2>
+          </div>
+          <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+<%= link_to "click here to register your domain", new_registration_path, class:  "btn btn-primary" %>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+            <ul class="list-inline mb-2">
+              <li class="list-inline-item">
+                <a href="#">About</a>
+              </li>
+              <li class="list-inline-item">&sdot;</li>
+              <li class="list-inline-item">
+                <a href="#">Contact</a>
+              </li>
+              <li class="list-inline-item">&sdot;</li>
+              <li class="list-inline-item">
+                <a href="#">Terms of Use</a>
+              </li>
+              <li class="list-inline-item">&sdot;</li>
+              <li class="list-inline-item">
+                <a href="#">Privacy Policy</a>
+              </li>
+            </ul>
+            <p class="text-muted small mb-4 mb-lg-0">&copy; Your Website 2018. All Rights Reserved.</p>
+          </div>
+          <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+            <ul class="list-inline mb-0">
+              <li class="list-inline-item mr-3">
+                <a href="#">
+                  <i class="fa fa-facebook fa-2x fa-fw"></i>
+                </a>
+              </li>
+              <li class="list-inline-item mr-3">
+                <a href="#">
+                  <i class="fa fa-twitter fa-2x fa-fw"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="fa fa-instagram fa-2x fa-fw"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>

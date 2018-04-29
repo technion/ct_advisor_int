@@ -7,23 +7,18 @@
     <meta name="description" content="">
   <title><%= yield(:title) %> </title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
 <!-- Full Width Image Header with Logo -->
-<!-- Image backgrounds are set within the full-width-pics.css file. -->
+<!-- Image backgrounds are set within the full-width-pics.css file.
 <header class="image-bg-fluid-height">
 	<%= image_tag 'haroldcoffee.jpg', alt: "Certificatee Transparency", class: "img-responsive img-center" %>
-</header>
-<section>
-<div class="container">
-
+</header>-->
 <%= yield %>
-</div>
-</section>
 <!-- Footer -->
 <footer>
 	<div class="container">
