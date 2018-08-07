@@ -1,5 +1,5 @@
-<h1>Registration#verify</h1>
-<p>Find me in app/views/registration/destroy_form.html.erb</p>
+<h1>Confirm Unsubscribe</h1>
+<p>Click to confirm</p>
 <div><%= @status %></div>
 <%= form_tag("/registrations", method: "delete") do %>
   <%= hidden_field_tag(:nonce, @registration.nonce) =%>

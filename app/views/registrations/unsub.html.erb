@@ -1,12 +1,10 @@
+<% provide(:title, 'Unregister') %>
 <h1>Unsubscribe</h1>
 <p>Please fill in the below form to unsubscribe</p>
 
-<% provide(:title, 'Unregister') %>
-<h1>Sign up</h1>
-
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <%= form_for(@registration, url: 'unsubscribe') do |f| %>
+      <%= form_for(@registration, url: {action: "unsub_send"}) do |f| %>
       <%= f.label :email %>
       <%= f.email_field :email %>
 
