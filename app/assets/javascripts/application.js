@@ -11,3 +11,27 @@
 // about supported directives.
 //
 //= require_tree .
+
+function setImages(bg) {
+  var mast = document.querySelector("header.masthead");
+  mast.style.background = bg;
+  mast.style.backgroundSize = "100%";
+  var call = document.querySelector("section.call-to-action");
+  call.style.background = bg;
+  call.style.backgroundSize = "100%";
+
+}
+
+window.onload = function() {
+  var webp = new Image();
+  webp.onerror = function(){
+    setImages("url('/pexelsbg.png') no-repeat center center");
+    console.log('Your browser does not support WebP');
+  };
+  webp.onload = function(){
+    setImages("url('/pexelsbg.webp') no-repeat center center");
+  };
+  webp.src = 'data:image/webp;base64,UklGRjIAAABXRUJQVlA4ICYAAACyAgCdASoBAAEALmk0mk0iIiIiIgBoSygABc6zbAAA/v56QAAAAA==';
+
+}
+
