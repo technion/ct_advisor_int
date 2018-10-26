@@ -17,9 +17,10 @@ function setImages(bg) {
   mast.style.background = bg;
   mast.style.backgroundSize = "100%";
   var call = document.querySelector("section.call-to-action");
-  call.style.background = bg;
-  call.style.backgroundSize = "100%";
-
+  if(call) {
+    call.style.background = bg;
+    call.style.backgroundSize = "100%";
+  }
 }
 
 window.onload = function() {
