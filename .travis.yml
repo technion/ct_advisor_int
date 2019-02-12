@@ -8,6 +8,8 @@ services:
 script:
   - bundle exec rails db:migrate
   - bundle exec rake test
+before_install:
+  - gem install bundler
 before_script:
   - psql -c 'create database ct_advisor_int_test;' -U postgres
   - psql -c 'create user ct_advisor_int_test;' -U postgres
