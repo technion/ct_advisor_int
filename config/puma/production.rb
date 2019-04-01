@@ -1,5 +1,4 @@
 #!/usr/bin/env puma
-daemonize
 environment 'production'
 pidfile 'tmp/pids/puma.pid'
 workers 1
