@@ -1,6 +1,6 @@
 language: ruby
 rvm:
-  - 2.3.1
+  - 2.6.3
 env:
   - RECAPTCHA_SITE_KEY='6LeIyhMTAAAAAMsqDqlhkQf3AXemBxjsyuSf8gzq'
 services:
