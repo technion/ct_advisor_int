@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'irb'
 gem 'dotenv-rails', '~> 2.2.2'
 gem "recaptcha", require: "recaptcha/rails"
 gem 'public_suffix', '~> 2.0'
