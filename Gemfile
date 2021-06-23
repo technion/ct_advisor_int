@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'irb'
 gem 'dotenv-rails', '~> 2.7.6'
 gem "recaptcha", require: "recaptcha/rails"
-gem 'public_suffix', '~> 2.0'
+gem 'public_suffix', '~> 4.0'
 gem 'puma'
 gem "json", ">= 2.3.0"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
