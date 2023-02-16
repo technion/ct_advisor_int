@@ -4,6 +4,14 @@ ct_advisor_int
 
 ct_advisor is a proactive alerting tool for [Google's Certificate Transparency](https://www.certificate-transparency.org/).
 
+# Shutdown Statement
+
+The production instance of CT Advisor is shutting down. Although this was open source, as far as I'm aware there were no other installations of this application. Accordingly, this repo is being archived. See below for further information.
+
+https://lolware.net/blog/shutdown-ctadvisor/
+
+## Original README
+
 Google offers a number of great options for an administrator to utilise this feature. Unfortunately being an early adopter, particularly if you run Windows servers or run SSL on appliances, makes it difficult to take advantage of this service.
 
 As an alternative option, this service continually polls the CT log, and will trigger alerts if a certificate is ever registered for your domain, by any CA in the CT program. This can be used to identify fraudulent certificates.

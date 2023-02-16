@@ -25,6 +25,12 @@ class RegistrationsController < ApplicationController
   end
 
   def create
+    # Shutdown process - creating a sign up no longer available
+    @status = "Registrations are disabled"
+    render "status"
+    return
+
+    # Original workflow
     @registration = Registration.new(registration_params)
     @registration.set_nonce
     @registration.active = 0

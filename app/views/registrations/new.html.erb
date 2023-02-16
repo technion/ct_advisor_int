@@ -1,19 +1,5 @@
 <h1>Registration</h1>
-<p>Please use the below form to register a domain for monitoring. Enter only your base domain - all subdomains will automatically be monitored.</p>
+<p>Registrations are now disabled in order to faciliate a clean service shutdown..</p>
 
 <% provide(:title, 'Sign up') %>
 
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for(@registration) do |f| %>
-      <%= f.label :email %>
-      <%= f.email_field :email %>
-
-      <%= f.label :domain %>
-      <%= f.text_field :domain %>
-
-      <%= f.submit "Create my account", class: "btn btn-primary" %>
-      <%= recaptcha_tags %>
-    <% end %>
-  </div>
-</div>
